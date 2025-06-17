@@ -43,102 +43,137 @@ Este proyecto permite administrar las clases del src (Clinica, especialidad, His
 # Estructura del proyecto
 - src/: Son todas las clases del sistema
 - test/: Son 10 test por clases, para ver el funcionamiento
+
 # Clases
+
 1. Paciente
+
 - Representar los pacientes
-**Atributos** 
+- **Atributos** 
 - DNI
 - Nombre Completo
 - Fecha de nacimiento
 - Esta clase permite identificar a cada paciente por su dni, pueden solicitar turnos, recibir recetas, y tener un historial clinico.
+
 2. Medico
+
 - Representar los medicos
-**Atributos**
+- **Atributos**
 - Matricula
 - Nombre Completo
 - Lista de especialidades
 - La matricula medica permite identificar a cada medico, verificar de que exista. Un medico puede tener multiples especialidades
+
 3. Especialidad
+
 Define las especialidades médicas y los dias en los que atiende
-**Atributo**
+- **Atributo**
 - Tipo de especialidad
 - Días de la semana disponibles
 - Esta clase permite que un médico tenga multiples especialidades con horarios diferentes. 
+
 4. Turno
+
 Gestiona las citas médicas entre los pacientes y los medicos
-**Atributo**
+- **Atributo**
 - Paciente
 - Medico
 - Fecha y hora
 - Especialidad solicitada
 - Tiene validaciones para verificar que el medico tenga una especialidad disponible en el dia solicitado. Y heredan atributos de paciente/medico.
+
 5. Receta
+
 Registra las prescripciones médicas
-**Atributos**
+- **Atributos**
 - Paciente
 - Médico prescriptor
 - Lista de medicamentos
 - Fecha de emisión
 - Permite llevar un registro de todos los medicamentos prescriptos, se integra al historial clinico del paciente.
+
 6. Historia Clinica
+
 Permite ver la informacion medica de un paciente
-**Atributos**
+
+- **Atributos**
 - Paciente asociado
 - Lista de turnos
 - Lista de recetas
 - Permite ver toda la informacion del paciente, seguirlo en detalle los turnos, medicamentos gestionados por un medico.
+
 7. Clinica
+
 Controla todas las operaciones del sistema, y manejo de excepciones.
+
 ## Manejo de Interfaz
+
 1-Agregar paciente 
+
 Esta clase la creamos para poder tener el dni del paciente, el nombre, la fecha de nacimiento. Con estos datos podemos pedir turnos con los distintos medicos, recetas, y saber el historial clinico del paciente, a partir del dni.
-**Ejemplo**
+
+- **Ejemplo**
 - DNI:27116121
--Nombre: Vanina
+- Nombre: Vanina
 - Fecha Nacimiento (dd/mm/aaaa): 28/05/2006
 
 2-Agregar medico
+
 Esta clase esta en el src para poder crear un medico, pidiendole la matricula , el nombre, con esto el medico puede tener una especialidad y poder recibir tanto turnos como tambien dar recetas.
-**Ejemplo**
+
+- **Ejemplo**
 - Matrícula: M2-100
 - Nombre: Pan
 
 3-Agregar especialidad a medico
+
 La clase especialidad se creo para poder asignarle un rol al medico, puede elegir que especialidad hacer, los dias que quiere tener con esa especialidad, puede tener mas de 1 especialidad por medico , con distintos dias.
-**Ejemplo**
+
+- **Ejemplo**
 - Matrícula: M2-100
 - Tipo de especialidad: Pediatra
 - Días (separados por coma): lunes, martes
 
 4- Agendar turno
-- Se creo la clase turno para que el paciente tenga una consulta con un medico, se le pide el dni del paciente para verificar que exista, la matricula del medico para que tambien se verifique de que exista el medico, la fecha tambien se pide para saber el dia del encuentro, verificamos tambien que exista la fecha,la especialidad tambien se pide, para saber si ese dia es para la especialidad o no, una vez que pasa todas estas condiciones se agenda el turno con el paciente y el medico.
-**Ejemplo** 
+
+ Se creo la clase turno para que el paciente tenga una consulta con un medico, se le pide el dni del paciente para verificar que exista, la matricula del medico para que tambien se verifique de que exista el medico, la fecha tambien se pide para saber el dia del encuentro, verificamos tambien que exista la fecha,la especialidad tambien se pide, para saber si ese dia es para la especialidad o no, una vez que pasa todas estas condiciones se agenda el turno con el paciente y el medico.
+
+- **Ejemplo** 
 - DNI paciente: 27116121
 - Matrícula médico: M2-100
 - Fecha (dd/mm/aaaa): 30/06/2025
 - Hora (HH:MM): 11:30
 - Especialidad: Pediatra
+
 5- Emitir receta 
-- La clase receta se crea para que el medico pueda asignarle distintos medicamentos para un paciente, se pide tanto el dni del paciente para saber si existe o no el paciente, la matricula del medico para tambien corroborar que exista el medico, y los medicamentos que le va a dar al paciente, una vez terminado , eso se guarda en el historial clinico del paciente.
-**Ejemplo**
+
+ La clase receta se crea para que el medico pueda asignarle distintos medicamentos para un paciente, se pide tanto el dni del paciente para saber si existe o no el paciente, la matricula del medico para tambien corroborar que exista el medico, y los medicamentos que le va a dar al paciente, una vez terminado , eso se guarda en el historial clinico del paciente.
+
+- **Ejemplo**
 - DNI paciente: 27116121
 - Matrícula médico: M2-100
 - Medicamentos (separados por coma): Ibuprofeno, redoxon
 
 6- Ver hisotoria clinica
+
 La clase historia clinica se creo para poder juntar, el paciente con sus turnos, recetas y poder ver toda esa informacion pedida en tan sola una lista
-**Ejemplo**
+
+- **Ejemplo**
 - DNI paciente: 27116121
 
 7- Ver todos los turnos
+
 - La clase turnos se utiliza aca para poder agarrar todos los turnos existes , de todos los pacientes con sus respectivos medicos.
 
 8- Ver todos los pacientes
+
 - La clase paciente se utiliza para poder mostrar una lista de los pacientes con todos sus datos ingresados
 
 9- Ver todos los médicos
+
 - La clase medico se utiliza para poder mostrar una lista de los medicos con sus matriculas , especialidades y los dias en los que da una especialidad.
 0- Salir
+
 - Este se utiliza una vez que se termina de utilizar el programa.
 
 ## Como ejecutar las pruebas 
