@@ -108,6 +108,8 @@ Controla todas las operaciones del sistema, y manejo de excepciones.
 
 ## Manejo de Interfaz
 
+- Para abrir la terminal hay que seguir unos pasos, ctrl + P, ponemos >Create New Termina (with Profile), seleccionamos despues el primero que nos aparece "Command prompt" , se abre la terminal ahi colocamos el siguiente comando: python src/CLI.py, y se ejecutará la interfaz de la clinica.
+
 1-Agregar paciente 
 
 Esta clase la creamos para poder tener el dni del paciente, el nombre, la fecha de nacimiento. Con estos datos podemos pedir turnos con los distintos medicos, recetas, y saber el historial clinico del paciente, a partir del dni.
